@@ -1,6 +1,4 @@
-![Teaser Image](./readme/teaser.png)
-
-# Assets Exporter
+# Sketch Assets Exporter
 
 Plugin that lets you export your assets automatically on document save. 
 Psst… It’s developer friendly! You can define `.sketchconfig.json` files for each Sketch project 😉 …  
