@@ -1,0 +1,27 @@
+{
+	"$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
+	"icon": "icon.png",
+	"commands": [
+		{
+			"name": "Export …",
+			"identifier": "assets-exporter.export",
+			"script": "./index.js"
+		},
+		{
+			"name": "Export On Save",
+			"identifier": "assets-exporter.export",
+			"script": "./index.js",
+			"handlers": {
+				"actions": {
+					"DocumentSaved": "exportOnDocSaved"
+				}
+			}
+		}
+	],
+	"menu": {
+		"title": "🌈 Assets Exporter",
+		"items": [
+			"assets-exporter.export"
+		]
+	}
+}

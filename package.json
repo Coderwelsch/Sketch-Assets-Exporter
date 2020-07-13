@@ -1,0 +1,43 @@
+{
+	"name": "sketch-exporter",
+	"main": "src/node/sketch-exporter.js",
+	"description": "Sketch Assets Exporter",
+	"version": "0.1.0",
+	"engines": {
+		"sketch": ">=49.0.0"
+	},
+	"pkg": {
+		"assets": [
+			"src/node/**/*"
+		]
+	},
+	"skpm": {
+		"name": "Assets Exporter",
+		"manifest": "src/manifest.json",
+		"main": "assets-exporter.sketchplugin",
+		"assets": [
+			"assets/**/*"
+		],
+		"sketch-assets-file": "sketch-assets/icons.sketch"
+	},
+	"scripts": {
+		"build": "skpm-build",
+		"build-dev": "skpm-build",
+		"watch": "skpm-build --watch",
+		"start": "skpm-build --watch --run",
+		"postinstall": "npm run build && skpm-link"
+	},
+	"devDependencies": {
+		"@babel/polyfill": "^7.8.7",
+		"@skpm/builder": "^0.7.0",
+		"pkg": "^4.4.8",
+		"sketch": "^0.2.0"
+	},
+	"author": "Joseph Ribbe <social@coderwelsch.com>",
+	"dependencies": {
+		"@skpm/child_process": "^0.4.2",
+		"@skpm/dialog": "^0.4.0",
+		"@skpm/fs": "^0.2.6",
+		"iconfont-maker": "^0.0.7"
+	}
+}
