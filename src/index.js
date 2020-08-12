@@ -6,9 +6,6 @@ import loadConfig from "./load-config";
 import exportSketchAssets from "./export-sketch-assets";
 
 
-let currentSteps = 0;
-const totalSteps = 2;
-
 function getOutputDir () {
 	let dir = openDialog({ message: "Please choose an assets export directory …" });
 
@@ -31,10 +28,11 @@ const exportPageArtboards = async () => {
 		// load config
 		const config = loadConfig("assets-exporter");
 
-		const pageToExport = config.pageName ?
-				doc.pages.filter(({ name }) => name !== config.pageName)[0] :
-				doc.selectedPage;
+		if (!config) {
+			return;
+		}
 
+		const pageToExport = doc.pages.filter(({ name }) => name !== config.pageName)[0];
 		const artboardsToExport = pageToExport.layers;
 
 		// opens file dialog when output isn’t set
@@ -45,7 +43,7 @@ const exportPageArtboards = async () => {
 			output += "/";
 		}
 
-		await exportSketchAssets(output);
+		await exportSketchAssets(pageToExport, output);
 		stepDone(`Exported ${ artboardsToExport.length } assets successfully`);
 	} else {
 		console.log("Error: No document selected");
@@ -65,13 +63,12 @@ function openDialog (settings) {
 }
 
 function stepDone (message) {
-	currentSteps++;
-	sketch.UI.message(`🌈 [${ currentSteps }/${ totalSteps }] Assets Exporter: ${ message }`);
+	sketch.UI.message(`🌈 Assets Exporter: ${ message }`);
 }
 
 
 // EXPORTS
-export default exportPageArtboards();
+export default exportPageArtboards;
 
 export {
 	exportOnDocSaved

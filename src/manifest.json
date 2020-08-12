@@ -8,7 +8,7 @@
 			"script": "./index.js"
 		},
 		{
-			"name": "Export On Save",
+			"name": "Export Assets",
 			"identifier": "assets-exporter.export",
 			"script": "./index.js",
 			"handlers": {
