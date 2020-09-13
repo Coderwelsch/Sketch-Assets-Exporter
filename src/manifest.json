@@ -6,16 +6,6 @@
 			"name": "Export …",
 			"identifier": "assets-exporter.export",
 			"script": "./index.js"
-		},
-		{
-			"name": "Export Assets",
-			"identifier": "assets-exporter.export",
-			"script": "./index.js",
-			"handlers": {
-				"actions": {
-					"DocumentSaved": "exportOnDocSaved"
-				}
-			}
 		}
 	],
 	"menu": {

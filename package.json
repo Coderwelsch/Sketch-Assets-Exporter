@@ -6,11 +6,6 @@
 	"engines": {
 		"sketch": ">=49.0.0"
 	},
-	"pkg": {
-		"assets": [
-			"src/node/**/*"
-		]
-	},
 	"skpm": {
 		"name": "Assets Exporter",
 		"manifest": "src/manifest.json",

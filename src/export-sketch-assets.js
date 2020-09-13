@@ -1,9 +1,8 @@
 import sketch from "sketch";
 
 
-function exportSketchAssets (page, output) {
-	const doc = sketch.getSelectedDocument();
-	const artboards = page.layers;
+function exportSketchAssets (artboards, output) {
+	console.log("ARTBOARDS", artboards);
 
 	sketch.export(
 		artboards,

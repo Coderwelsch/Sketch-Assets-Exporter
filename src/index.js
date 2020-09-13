@@ -32,7 +32,7 @@ const exportPageArtboards = async () => {
 			return;
 		}
 
-		const pageToExport = doc.pages.filter(({ name }) => name !== config.pageName)[0];
+		const pageToExport = doc.pages.filter(({ name }) => name === config.pageName)[0];
 		const artboardsToExport = pageToExport.layers;
 
 		// opens file dialog when output isn’t set
@@ -43,7 +43,7 @@ const exportPageArtboards = async () => {
 			output += "/";
 		}
 
-		await exportSketchAssets(pageToExport, output);
+		await exportSketchAssets(artboardsToExport, output);
 		stepDone(`Exported ${ artboardsToExport.length } assets successfully`);
 	} else {
 		console.log("Error: No document selected");
