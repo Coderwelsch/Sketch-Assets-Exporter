@@ -1,4 +1,12 @@
-## Changelog
+# Changelog
+
+## [1.0.1] Security Upgrades
+
+```Date: 2020-01-05```
+
+Changes:
+- Upgraded to latest npm packages versions
+
 
 ## [1.0.0] First Release!
 
