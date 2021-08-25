@@ -2,7 +2,7 @@
 	"name": "sketch-exporter",
 	"main": "src/node/sketch-exporter.js",
 	"description": "Sketch Assets Exporter",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"sketch": ">=49.0.0"
 	},
